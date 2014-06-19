@@ -16,3 +16,8 @@ class DiscountCalculatorTests(unittest.TestCase):
 		discount_calculator = DiscountCalculator()
 		result = discount_calculator.calculate(250,5,'absolute')
 		self.assertEqual(5, result)
+
+	def invalid_discount_type_test(self):
+		discout_calculator = DiscountCalculator()
+		self.assertRaises(ValueError, discount_calculator.calculate,
+						  250, 5, 'random')
